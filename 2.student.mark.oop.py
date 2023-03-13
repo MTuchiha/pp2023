@@ -41,26 +41,26 @@ class course:
             total += i
         return total/len(self.marks)
 
-def inputNumberStudents():
+def input_number_students():
     return int(input("Enter number of students: "))
 
-def inputStudentsInfo():
-    for i in range(inputNumberStudents()):
+def input_students_info():
+    for i in range(input_number_students()):
         id = input("Enter student id: ")
         name = input("Enter student name: ")
         dob = input("Enter student dob: ")
         students.append(student(name, id, dob))
 
-def inputNumberCourses():
+def input_number_ourses():
     return int(input("Enter number of courses: "))
 
-def inputCoursesInfo():
-    for i in range(inputNumberCourses()):
+def input_courses_info():
+    for i in range(input_number_ourses()):
         id = input("Enter course id: ")
         name = input("Enter course name: ")
         courses.append(course(name, id))
 
-def inputMark(courses, students):
+def input_mark(courses, students):
     for course in courses:
         print(f"Enter mark for course: {course.get_name()}")
         for student in students:
@@ -77,19 +77,19 @@ def list_students(students):
     for student in students:
         print(f"-{student.get_name()}")
 
-def showcoursemarks(course):
+def show_course_marks(course):
     for mark in course.get_marks():
         print(f"-{mark}")
 
 
-inputStudentsInfo()
-inputCoursesInfo()
-inputMark(courses, students)
+input_students_info()
+input_courses_info()
+input_mark(courses, students)
 list_courses(courses)
 list_students(students)
 for course in courses:
     print(f"List of marks for {course.get_name()}:")
-    showcoursemarks(course)
+    show_course_marks(course)
     print(f"Average mark for {course.get_name()}: {course.get_average()}")
 
 
